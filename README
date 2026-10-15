@@ -1,12 +1,14 @@
 # Bit Manipulation Toolkit in C
 
-A simple C program demonstrating bitwise operations on 32-bit unsigned integers.
+A C project demonstrating bitwise operations on 32-bit unsigned integers.
 
-- **`set_bit()`** — Sets a specified bit to `1`.
-- **`clear_bit()`** — Clears a specified bit to `0`.
-- **`toggle_bit()`** — Flips a specified bit.
-- **`check_bit()`** — Checks whether a specified bit is set.
-- **`count_set_bits()`** — Counts the number of bits set to `1`.
-- **`is_power_of_two()`** — Checks whether a number is a power of two.
+### Functions
 
-The program also includes `print_binary()`, a helper function to display numbers in binary format.
+- `set_bit()` — Sets a bit to 1.
+- `clear_bit()` — Clears a bit to 0.
+- `toggle_bit()` — Toggles a bit.
+- `check_bit()` — Checks whether a bit is set.
+- `count_set_bits()` — Counts the set bits.
+- `is_power_of_two()` — Checks whether a number is a power of two.
+
+Includes `print_binary()` to display numbers in binary format.
