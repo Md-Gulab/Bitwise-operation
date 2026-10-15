@@ -1,0 +1,7 @@
+#Ignore build outputs and binaries
+*.o
+*.out
+*.hex
+*.elf
+*.bin
+*.exe
