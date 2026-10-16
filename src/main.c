@@ -21,10 +21,12 @@ int main(){
     // printf("Number of set bits = %d\n",a) ;
     // printf("\n\r") ;
 
-    printf("\n\r") ;
-    bool var1 = is_power_of_two(0x00008000) ;
-    printf("var1 = %d\n",var1) ;
-    printf("\n\r") ;
+    // printf("\n\r") ;
+    // bool var1 = is_power_of_two(0x00008000) ;
+    // printf("var1 = %d\n",var1) ;
+    // printf("\n\r") ;
 
-    return 0 ;
+    // return 0 ;
+
+    
 }

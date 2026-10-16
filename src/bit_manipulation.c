@@ -16,71 +16,57 @@ void print_binary(uint32_t n) {
 }
 //--------------------------------------------------------------------------
 
-void set_bit(uint32_t num, uint32_t pos){
+uint32_t set_bit(uint32_t num, uint32_t pos){
     int temp = num ;
     if(pos>31){
         printf("set_bit() executing.....\n") ;
         printf("EXITING-invalid (%d) bit position entered!\n",pos) ;
-        return ;
+        return -1 ;
     }
     temp |= (1U << pos) ;
-    printf("Given Number(%d)                     = ",num) ;
-    print_binary(num) ;
-    printf("After bit no %d set (%-15d)  = ",pos,temp) ;
-    print_binary(temp) ;
-    return ;
+
+    return temp ;
 }
 
-void clear_bit(uint32_t num, uint32_t pos){
+uint32_t clear_bit(uint32_t num, uint32_t pos){
     int temp = num ;
     if(pos>31){
         printf("clear_bit() executing.....\n") ;
         printf("EXITING-invalid (%d) bit position entered!\n",pos) ;
-        return ;
+        return -1 ;
     }
     temp &= ~(1U << pos) ; 
-    printf("Given Number(%-2d)                         = ",num) ;
-    print_binary(num) ;
-    printf("After bit no %d cleared (%-15d)  = ",pos,temp) ;
-    print_binary(temp) ;
-    return ;
+
+    return temp ;
 }
 
-void toggle_bit(uint32_t num, uint32_t pos){
+uint32_t toggle_bit(uint32_t num, uint32_t pos){
     int temp = num ;
     if(pos>31){
         printf("clear_bit() executing.....\n") ;
         printf("EXITING-invalid (%d) bit position entered!\n",pos) ;
-        return ;
+        return -1 ;
     }
     temp ^= (1U << pos) ;
-    printf("Given Number(%-2d)                         = ",num) ;
-    print_binary(num) ;
-    printf("After bit no %d toglled (%-15d)  = ",pos,temp) ;
-    print_binary(temp) ;
-    return ;
+
+    return temp ;
 }
 
-void check_bit(uint32_t num, uint32_t pos){
+bool check_bit(uint32_t num, uint32_t pos){
     int temp = num ;
     if(pos>31){
         printf("clear_bit() executing.....\n") ;
         printf("EXITING-invalid (%d) bit position entered!\n",pos) ;
-        return ;
+        return 0 ;
     }
     temp &= (1U << pos) ;
-    temp = temp >> pos ;
-    printf("Given Number(%-5d)                           = ",num) ;
-    print_binary(num) ;
-    printf("Bit no %-2d is = %d\n",pos,temp) ;
-    //print_binary(temp) ;
-    return ;  
+    return (bool)temp ;  
 }
 
 
-int count_set_bits(uint32_t num){
+uint32_t count_set_bits(uint32_t num){
     int temp = num ;
-    uint8_t count = 0 ;
+    uint32_t count = 0 ;
     for(int i=0 ; i<32 ; i++){
         temp &= (1U<<i) ;
        // temp = temp >> i ;
@@ -89,8 +75,6 @@ int count_set_bits(uint32_t num){
         }
         temp = num ;
     }
-    printf("Given Number(%d) = ",num) ;
-    print_binary(num) ;
     return count ;
 }
 
