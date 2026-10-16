@@ -68,8 +68,11 @@ void     print_binary(uint32_t num);
 
 ```
 .
-├── main.c        # Function implementations and demo
-├── Makefile      # Build script
-├── .gitignore
-└── README.md
+├── src/
+│   ├── bit_manipulation.c    # Bitwise function implementations
+│   ├── bit_manipulation.h    # Header guards and function prototypes
+│   └── main.c                # Main application entry and testing
+├── .gitignore                # Git ignore rules
+├── Makefile                  # Build and compilation automation
+└── README.md                 # Project documentation
 ```
