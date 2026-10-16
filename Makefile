@@ -1,5 +1,5 @@
-compile: main.c
-	gcc -std=c2x -Wall -Wextra -Wpedantic -lucrt main.c -o main
+compile: src/main.c src/bit_manipulation.c
+	gcc -std=c2x -Wall -Wextra -Wpedantic -lucrt 	src/main.c	 src/bit_manipulation.c	 -o main
 
 run: main.exe
 	./main.exe	

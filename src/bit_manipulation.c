@@ -1,17 +1,7 @@
-//this program demonstrates several concepts used in bitwise operations
+#include"bit_manipulation.h"
 #include<stdio.h>
 #include<stdint.h>
-#include<stdlib.h>
 #include <inttypes.h>
-
-//function prototypes
-void set_bit(uint32_t num, uint32_t pos) ;
-void clear_bit(uint32_t num, uint32_t pos) ;
-void toggle_bit(uint32_t num, uint32_t pos) ;
-void check_bit(uint32_t num, uint32_t pos) ;
-int count_set_bits(uint32_t num) ;
-void is_power_of_two(uint32_t num) ;
-
 
 //this is ust a helper function to print a number in binary------------------
 void print_binary(uint32_t n) {
@@ -25,33 +15,6 @@ void print_binary(uint32_t n) {
     printf("\n");
 }
 //--------------------------------------------------------------------------
-
-
-int main(){
-
-    printf("\n\r") ;
-    set_bit(345,8) ;
-
-    printf("\n\r") ;
-    clear_bit(390897,18) ;
-    printf("\n\r") ;
-
-    toggle_bit(38,3) ;
-    printf("\n\r") ;
-
-    check_bit(0Xfa,2) ;
-
-    printf("\n\r") ;
-    int a = count_set_bits(0xfffffff0) ;
-    printf("Number of set bits = %d\n",a) ;
-    printf("\n\r") ;
-
-    printf("\n\r") ;
-    is_power_of_two(0x00008000) ;
-    printf("\n\r") ;
-
-    return 0 ;
-}
 
 void set_bit(uint32_t num, uint32_t pos){
     int temp = num ;
@@ -131,21 +94,14 @@ int count_set_bits(uint32_t num){
     return count ;
 }
 
-void is_power_of_two(uint32_t num){
-    //the binary sequence is a power of two if , any one and only one , bit except LSB is high
-    //if LSB is high , with all higher bit having any combination of 1&0 , number is not power of two
+bool is_power_of_two(uint32_t num){
+    bool powerOfTwo = false ;
+    if(num==0){
+        return 0 ;
+    }
 
-    if((num & (1U))){  // LSB == 1  should be executed
-        printf("Executing....is_power_of_two....for '%d'\n",num) ; 
-        printf("This number can't be a power of two\n") ;
-        return ;
+    if((num & (num-1)) == 0){
+        powerOfTwo = true ;
     }
-    int a = count_set_bits(num) ;
-    if(a == 1 ){
-        printf("This number is a power of 2\n") ;
-    }
-    else{
-        printf("This number can't be a power of two\n") ;
-    }
-    return ;
+    return powerOfTwo ;
 }
